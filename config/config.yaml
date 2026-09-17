@@ -1,0 +1,17 @@
+project:
+  name: MVP-Basket-Games-Analysis
+  version: 0.1.0
+video:
+  target_fps: 30
+  processing_resolution:
+  - 1920
+  - 1080
+models:
+  detection_weights: yolo11n.pt
+  tracker: bytetrack.yaml
+  reid_method: color_histogram
+calibration:
+  use_jpr: true
+analytics:
+  smoothing_filter: savitzky_golay
+  max_target_players_per_possession: 2
