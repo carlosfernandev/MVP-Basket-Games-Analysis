@@ -24,8 +24,12 @@ wheels/
 .venv
 venv/
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Jupyter# Archivos de Jupyter
+.ipynb_checkpoints/
+
+# Secrets (¡NUNCA SUBIR A GITHUB!)
+.env
+.env.*
 
 # Datos crudos y procesados (¡NUNCA SE SUBEN AL REPO!)
 data/raw/*

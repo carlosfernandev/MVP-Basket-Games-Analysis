@@ -8,8 +8,8 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      # Montamos todo tu proyecto local dentro del contenedor para que los cambios se reflejen al instante
-      - .:/workspace
+      # Montamos todo tu proyecto local usando :z para solucionar los permisos de Podman/SELinux
+      - .:/workspace:z
     # deploy:
     #   resources:
     #     reservations:
@@ -19,4 +19,6 @@ services:
     #           capabilities: [gpu]
     environment:
       - JUPYTER_ENABLE_LAB=yes
+    env_file:
+      - .env
     command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='basket'

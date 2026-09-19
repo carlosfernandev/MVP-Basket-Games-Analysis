@@ -1,10 +1,10 @@
-FROM pytorch/pytorch:2.2.1-cuda12.1-cudnn8-runtime
+FROM python:3.10-slim
 
 WORKDIR /workspace
 
 # Instalar dependencias de sistema requeridas por OpenCV y utilidades básicas
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
